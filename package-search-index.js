@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.mobgran.js.exception"},{"l":"com.mobgran.js.service"},{"l":"com.mobgran.js.utils"},{"l":"com.mobgran.sync.model"},{"l":"com.mobgran.sync.model.configuracao"},{"l":"com.mobgran.sync.model.defs"}]
