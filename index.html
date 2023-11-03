@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vilarinho docs</title>
+    <style>
+      body {
+        font-family: "Source Sans Pro,Helvetica Neue,Arial,sans-serif";
+        color: #333;
+        margin: 0;
+        padding: 0;
+        transition: background-color 0.5s ease;
+      }
+
+      .gradient-background {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transition: background-color 0.5s ease;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 3em;
+      }
+
+      h2 {
+        font-size: 1.5em;
+      }
+
+      button {
+        padding: 10px 20px;
+        margin: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .button-1 {
+        background-color: transparent;
+        border-radius: 2rem;
+        border: 1px solid #42b983;
+        border-color: var(--theme-color, #42b983);
+        box-sizing: border-box;
+        color: #42b983;
+        color: var(--theme-color, #42b983);
+        display: inline-block;
+        font-size: 1.05rem;
+        letter-spacing: 0.1rem;
+        margin: 0.5rem 1rem;
+        padding: 0.75em 2rem;
+        text-decoration: none;
+        transition: all 0.15s ease;
+      }
+
+      .button-1:hover {
+        color: black;
+      }
+
+      .button-2 {
+        border-radius: 2rem;
+        border: 1px solid #42b983;
+        border-color: var(--theme-color, #42b983);
+        box-sizing: border-box;
+        color: #42b983;
+        color: var(--theme-color, #42b983);
+        display: inline-block;
+        font-size: 1.05rem;
+        letter-spacing: 0.1rem;
+        margin: 0.5rem 1rem;
+        padding: 0.75em 2rem;
+        text-decoration: none;
+        transition: all 0.15s ease;
+        background-color: var(--theme-color, #42b983);
+        color: #fff;
+      }
+
+      .button-2:hover {
+        background-color: #2e815b;
+      }
+
+      span.subtitle {
+        line-height: 1.8;
+        list-style-type: none;
+        margin: 1em auto;
+        max-width: 500px;
+        padding: 0;
+        color: #34495e;
+        font-size: 15px;
+        letter-spacing: 0;
+      }
+
+      span.title {
+        color: #34495e;
+        font-size: 2.5rem;
+        font-weight: 300;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body onload="changeGradient()">
+    <div class="gradient-background" id="gradient-background">
+      <span class="title">Vilarinho docs</span>
+
+      <span class="subtitle">
+        Utilize as opções abaixo para baixar o arquivo de definições para usar
+        em seu projeto typescript, ou então navegue para a documentação do
+        projeto
+      </span>
+
+      <a href="custom.d.ts" download="custom.d.ts">
+        <button class="button-1">Arquivo de definições</button>
+      </a>
+
+      <a href="docs/">
+        <button class="button-2">Ver documentação</button>
+      </a>
+    </div>
+
+    <script>
+      function generateRandomColor() {
+        return "#" + Math.floor(Math.random() * 16777215).toString(16) + "40";
+      }
+
+      function changeGradient() {
+        var color1 = generateRandomColor();
+        var color2 = generateRandomColor();
+        document.getElementById(
+          "gradient-background"
+        ).style.backgroundImage = `linear-gradient(45deg, ${color1}, ${color2})`;
+      }
+    </script>
+  </body>
+</html>
