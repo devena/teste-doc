@@ -301,6 +301,18 @@ export namespace Map{
 		setValue(value:V):V
 	}
 }
+export class ClientBaseDAO {
+	insert​<T>(t:T):Integer
+	insertMap​(nomeTabela:String, campos:HashMap<String,any>):Integer
+	rodarDelete​(sql:String, ...params:any):void
+	rodarInsert​(sql:String, ...params:any):Integer
+	rodarSelect​<E>(sql:String, clazz:E, ...params:any): E
+	rodarSelectList​<E>(sql:String, clazz:E, ...params:any): ArrayList<E>
+	rodarUpdate​(sql:String, ...params:any):Integer
+	update​<T>(t:T):Integer
+	updateMap​(nomeTabela:String, campos:HashMap<String,any>, where:HashMap<String,any>):Integer
+}
+
 export class JSException {
 	getArgs():any[]
 	getKey():String
@@ -320,11 +332,17 @@ export namespace ClienteJSService {
 	export function buscaPorId​(id:String):Cliente
 }
 
+export class ArrayListJSUtils {
+}
+
 export namespace ArrayListJSUtils.static {
 	export function ehVazio​(collection:ArrayList<any>):boolean
 	export function isEmpty​(collection:ArrayList<any>):boolean
 	export function isNotEmpty​(collection:ArrayList<any>):boolean
 	export function naoEhVazio​(collection:ArrayList<any>):boolean
+}
+
+export class BigDecimalJSUtils {
 }
 
 export namespace BigDecimalJSUtils.static {
@@ -345,15 +363,24 @@ export namespace BigDecimalJSUtils.static {
 	export function subtrair​(n1:any, n2:any):BigDecimal
 }
 
+export class BooleanJsUtils {
+}
+
 export namespace BooleanJsUtils.static {
 	export function ehFalso​(valor:any):boolean
 	export function ehNull​(valor:any):boolean
 	export function ehVerdadeiro​(valor:any):boolean
 }
 
+export class DateTimeJSUtils {
+}
+
 export namespace DateTimeJSUtils.static {
 	export function diferencaEmDias​(date1:DateTime, date2:DateTime):Integer
 	export function diferencaEmHoras​(date1:DateTime, date2:DateTime):Integer
+}
+
+export class IntegerJSUtils {
 }
 
 export namespace IntegerJSUtils.static {
@@ -369,6 +396,9 @@ export namespace IntegerJSUtils.static {
 	export function subtrair​(n1:any, n2:any):Integer
 }
 
+export class JsonJSUtils {
+}
+
 export namespace JsonJSUtils.static {
 	export function clone​<T>(obj:T): T
 	export function parsearData​(json:String):DateTime
@@ -377,6 +407,9 @@ export namespace JsonJSUtils.static {
 	export function parseParaClasse​<T>(json:String, classe:(new () => T)): T
 	export function parseTags​(tags:String):HashSet<String>
 	export function toJson​(val:any):String
+}
+
+export class StringJSUtils {
 }
 
 export namespace StringJSUtils.static {
@@ -393,8 +426,14 @@ export namespace StringJSUtils.static {
 	export function temTexto​(value:any):boolean
 }
 
+export class TesteJSUtils {
+}
+
 export namespace TesteJSUtils.static {
 	export function teste():void
+}
+
+export class UUIDJSUtils {
 }
 
 export namespace UUIDJSUtils.static {
