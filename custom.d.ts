@@ -311,16 +311,7 @@ export class JSException {
 export namespace AcabamentoJSService {
 	export function buscaPorCodigoIntegracao​(codigo:String):Acabamento
 	export function buscaPorId​(id:String):Acabamento
-	export function insert​<T extends com.mobgran.sync.dao.defs.GenericDaoInsert>(t:Acabamento):Integer
-	export function insertMap​(nomeTabela:String, campos:HashMap<String,​java.lang.any>):Integer
-	export function rodarDelete​(sql:String, ...params:any):void
-	export function rodarInsert​(sql:StringBuilder, ...params:any):Integer
-	export function rodarInsert​(sql:String, ...params:any):Integer
-	export function rodarSelect​<E>(sql:String, clazz:Class<E>, ...params:any): E
-	export function rodarSelectList​<E>(sql:String, clazz:Class<E>, ...params:any): ArrayList<E>
-	export function rodarUpdate​(sql:String, ...params:any):Integer
-	export function update​<T extends com.mobgran.sync.dao.defs.GenericDaoUpdate>(t:Acabamento):Integer
-	export function updateMap​(nomeTabela:String, campos:HashMap<String,​java.lang.any>, where:HashMap<String,​java.lang.any>):Integer
+	export function salvar​(value:Acabamento):Acabamento
 }
 
 export namespace ClienteJSService {
