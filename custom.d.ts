@@ -451,7 +451,6 @@ export class AbsOfertaEstoque {
 	getNomeExibicao():String
 	getPeso():BigDecimal
 	getQuantidade():BigDecimal
-	getStringSelect​(campos:String, joins:String):String
 	getValorImpostoDestacado():BigDecimal
 	getValorTotal():BigDecimal
 	getValorUnitario():BigDecimal
@@ -480,7 +479,6 @@ export class Acabamento {
 	getKeyText():String
 	getNome():String
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	getTraducao():String
 	setExibeLoja​(exibeLoja:Boolean):void
 	setKey​(key:String):void
@@ -514,7 +512,6 @@ export class Anexo {
 	getNomeOriginal():String
 	getPublico():Boolean
 	getSituacao():SituacaoCancelavel
-	getStringSelect​(campos:String, joins:String):String
 	getTamanhoEmail():BigDecimal
 	getTamanhoMin():BigDecimal
 	getTamanhoOriginal():BigDecimal
@@ -638,7 +635,6 @@ export class AnexoExtraIntegrador {
 export class AnexoPath {
 	getMd5():String
 	getPath():String
-	getStringSelect​(campos:String, joins:String):String
 	getUltimaModificacao():Long
 	setMd5​(md5:String):void
 	setPath​(path:String):void
@@ -666,7 +662,6 @@ export class AtendimentoCliente {
 	getIdUsuario():String
 	getNome():String
 	getSituacao():SituacaoAtendimentoCliente
-	getStringSelect​(campos:String, joins:String):String
 	getTipo():Dominio
 	getUsuario():Usuario
 	setCampanha​(campanha:Campanha):void
@@ -752,7 +747,6 @@ export class Campanha {
 	getIdTipoVenda():String
 	getNome():String
 	getSituacao():SituacaoCampanha
-	getStringSelect​(campos:String, joins:String):String
 	getTipoVenda():TipoVenda
 	setCodigoIntegracaoTipoVenda​(codigoIntegracaoTipoVenda:String):void
 	setDataFim​(dataFim:DateTime):void
@@ -778,7 +772,6 @@ export class Categoria {
 	getNome():String
 	getNomeAmigavel():String
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	getTraducao():String
 	setCategoriaPai​(categoriaPai:Categoria):void
 	setCodigoIntegracaoCategoriaPai​(codigoIntegracaoCategoriaPai:String):void
@@ -801,7 +794,6 @@ export class CategoriaHomeLoja {
 	getOrdem():Integer
 	getPublico():Boolean
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	getTipo():TipoCategoriaHomeLoja
 	getTraducao():String
 	setOrdem​(ordem:Integer):void
@@ -825,7 +817,6 @@ export class CategoriaHomeLojaCategoria {
 	getIdCategoriaHomeLoja():String
 	getOrdem():Integer
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	setCategoria​(categoria:Categoria):void
 	setCategoriaHomeLoja​(categoriaHomeLoja:CategoriaHomeLoja):void
 	setCodigoIntegracaoCategoria​(codigoIntegracaoCategoria:String):void
@@ -850,7 +841,6 @@ export class CategoriaHomeLojaEstoqueItem {
 	getIdEstoqueItem():String
 	getOrdem():Integer
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	setCategoriaHomeLoja​(categoriaHomeLoja:CategoriaHomeLoja):void
 	setCodigoIntegracaoCategoriaHomeLoja​(codigoIntegracaoCategoriaHomeLoja:String):void
 	setCodigoIntegracaoEstoqueItem​(codigoIntegracaoEstoqueItem:String):void
@@ -874,7 +864,6 @@ export class CategoriaProduto {
 	getIdProduto():String
 	getProduto():Produto
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	setCategoria​(categoria:Categoria):void
 	setCodigoIntegracaoCategoria​(codigoIntegracaoCategoria:String):void
 	setCodigoIntegracaoProduto​(codigoIntegracaoProduto:String):void
@@ -894,7 +883,6 @@ export class Classificacao {
 	getKeyText():String
 	getNome():String
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	getTraducao():String
 	setExibeLoja​(exibeLoja:Boolean):void
 	setKey​(key:String):void
@@ -951,7 +939,6 @@ export class Cliente {
 	getRepresentante():Representante
 	getSituacao():SituacaoCliente
 	getSituacaoUsuario():Dominio
-	getStringSelect​(campos:String, joins:String):String
 	getTabelaPreco():TabelaPreco
 	getTipo():TipoCliente
 	getVendedor():Usuario
@@ -1014,7 +1001,6 @@ export class Comentario {
 	getIdUsuarioCriacao():String
 	getObservadores():String
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	getTexto():String
 	getUsuarioCriacao():Usuario
 	setCliente​(cliente:Cliente):void
@@ -1036,7 +1022,6 @@ export namespace Comentario.static {
 export class CondicaoPagamento {
 	getNome():String
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	getTraducao():String
 	setNome​(nome:String):void
 	setSituacao​(situacao:SituacaoGeneric):void
@@ -1078,7 +1063,6 @@ export class Contato {
 	getPrefixo():String
 	getSituacao():SituacaoGeneric
 	getSituacaoBloqueio():SituacaoBloqueioContato
-	getStringSelect​(campos:String, joins:String):String
 	getSubtipoBloqueio():String
 	getTelefone():String
 	getTipo():ContatoTipo
@@ -1118,7 +1102,6 @@ export class Cor {
 	getExibeLoja():Boolean
 	getNome():String
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	getTraducao():String
 	setExibeLoja​(exibeLoja:Boolean):void
 	setNome​(nome:String):void
@@ -1140,7 +1123,6 @@ export class CotacaoMoeda {
 	getIdMoedaOrigem():String
 	getMoedaDestino():Moeda
 	getMoedaOrigem():Moeda
-	getStringSelect​(campos:String, joins:String):String
 	setCodigoIntegracaoMoedaDestino​(codigoIntegracaoMoedaDestino:String):void
 	setCodigoIntegracaoMoedaOrigem​(codigoIntegracaoMoedaOrigem:String):void
 	setDataCotacao​(dataCotacao:DateTime):void
@@ -1167,7 +1149,6 @@ export class CreditoCliente {
 	getObservacao():String
 	getPedido():Pedido
 	getSituacao():SituacaoCreditoCliente
-	getStringSelect​(campos:String, joins:String):String
 	getTipo():Dominio
 	getValor():BigDecimal
 	getValorUtilizado():BigDecimal
@@ -1208,7 +1189,6 @@ export class CustomForm {
 	getMotivoCancelamento():MotivoCancelamento
 	getObservacaoCancelamento():String
 	getSituacao():SituacaoCustomForm
-	getStringSelect​(campos:String, joins:String):String
 	getTipoCustomForm():TipoCustomForm
 	getUsuario():Usuario
 	setCodigoIntegracaoMotivoCancelamento​(codigoIntegracaoMotivoCancelamento:String):void
@@ -1253,7 +1233,6 @@ export class CustomFormItem {
 	getObservacaoCancelamento():String
 	getPossuiAgrupador():Boolean
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	getTipoCustomForm():TipoCustomForm
 	getValor():String
 	setArea​(area:String):void
@@ -1287,7 +1266,6 @@ export class Deposito {
 	getExibeLoja():Boolean
 	getNome():String
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	getTraducao():String
 	getVirtual():Boolean
 	setExibeLoja​(exibeLoja:Boolean):void
@@ -1331,7 +1309,6 @@ export namespace DisponibilidadeDTO.static {
 export class Dominio {
 	getNome():String
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	getTipo():EntidadeIntegracao
 	setNome​(nome:String):void
 	setSituacao​(situacao:SituacaoGeneric):void
@@ -1377,7 +1354,6 @@ export class Empresa {
 	getQuantidadeCasasDecimalVolumeMetrico():Integer
 	getSecretkeyContaEnvio():String
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	setAccesskeyContaEnvio​(accesskeyContaEnvio:String):void
 	setAnexoEstoqueSemImagem​(anexoEstoqueSemImagem:Anexo):void
 	setAnexoImagemFundoConferencia​(anexoImagemFundoConferencia:Anexo):void
@@ -1436,7 +1412,6 @@ export class Endereco {
 	getNomePais():String
 	getPais():Pais
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	getTipo():EnderecoTipo
 	getTipoString():String
 	setCidade​(cidade:String):void
@@ -1469,7 +1444,6 @@ export class EntidadeCarga {
 	getDataUltimaCarga():DateTime
 	getEntidade():EntidadeIntegracao
 	getPendenteCarga():Boolean
-	getStringSelect​(campos:String, joins:String):String
 	setDataUltimaCarga​(dataUltimaCarga:DateTime):void
 	setEntidade​(entidade:EntidadeIntegracao):void
 	setPendenteCarga​(pendenteCarga:Boolean):void
@@ -1485,7 +1459,6 @@ export class Espessura {
 	getKeyText():String
 	getNome():String
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	getTraducao():String
 	setExibeLoja​(exibeLoja:Boolean):void
 	setKey​(key:String):void
@@ -1563,7 +1536,6 @@ export class EstoqueItem {
 	getQuantidadeFaturadaNaoContabilizada():BigDecimal
 	getQuantidadeItens():BigDecimal
 	getSituacao():String
-	getStringSelect​(campos:String, joins:String):String
 	getTipoEstoqueItem():TipoEstoqueItem
 	getValorPromocional():BigDecimal
 	getValorTotalCusto():BigDecimal
@@ -1653,7 +1625,6 @@ export class FaseTarefa {
 	getNome():String
 	getOrdem():Integer
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	getTipoTarefa():TipoTarefa
 	setIdTipoTarefa​(idTipoTarefa:String):void
 	setNome​(nome:String):void
@@ -1728,7 +1699,6 @@ export class Faturamento {
 	getRepresentante():Representante
 	getSituacao():SituacaoFaturamento
 	getSituacaoUsuario():Dominio
-	getStringSelect​(campos:String, joins:String):String
 	getTipoFrete():TipoFrete
 	getTipoVenda():TipoVenda
 	getTotalizadores():String
@@ -1853,7 +1823,6 @@ export class FaturamentoItem {
 	getQuantidade():BigDecimal
 	getReservaItem():ReservaItem
 	getSituacao():SituacaoFaturamentoItem
-	getStringSelect​(campos:String, joins:String):String
 	getTabelaPrecoItem():TabelaPrecoItem
 	getValorImpostoDestacado():BigDecimal
 	getValorImpostoDestacadoConvertido():BigDecimal
@@ -1923,7 +1892,6 @@ export namespace FaturamentoItem.static {
 export class FormaPagamento {
 	getNome():String
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	getTraducao():String
 	setNome​(nome:String):void
 	setSituacao​(situacao:SituacaoGeneric):void
@@ -1943,7 +1911,6 @@ export class Fornecedor {
 	getIdTipo():String
 	getNome():String
 	getSituacao():SituacaoCliente
-	getStringSelect​(campos:String, joins:String):String
 	getTipo():Dominio
 	setCodigoIntegracaoEnderecoPrincipal​(codigoIntegracaoEnderecoPrincipal:String):void
 	setCodigoIntegracaoTipo​(codigoIntegracaoTipo:String):void
@@ -1965,7 +1932,6 @@ export class GenericModel {
 	getDataUltimaAtualizacao():DateTime
 	getIdRequisicaoAlteracao():String
 	getIdUsuarioAlteracao():String
-	getStringSelect​(campos:String, joins:String):String
 	setDataInclusao​(dataInclusao:DateTime):void
 	setDataUltimaAtualizacao​(dataUltimaAtualizacao:DateTime):void
 	setIdRequisicaoAlteracao​(idRequisicaoAlteracao:String):void
@@ -1992,7 +1958,6 @@ export class GenericModelEmpresa {
 	getIdEmpresa():String
 	getMetadados():String
 	getSituacaoIntegracao():SituacaoIntegracao
-	getStringSelect​(campos:String, joins:String):String
 	getTags():String
 	setAnexoPadrao​(anexoPadrao:Anexo):void
 	setCodigo​(codigo:String):void
@@ -2023,7 +1988,6 @@ export class GenericModelEmpresaGrupoUsuario {
 	getIdGrupoUsuario():String
 	getIdSituacaoIntegracaoTela():String
 	getSituacaoIntegracaoTela():SituacaoIntegracaoTela
-	getStringSelect​(campos:String, joins:String):String
 	setCodigoIntegracaoGrupoUsuario​(codigoIntegracaoGrupoUsuario:String):void
 	setCodigoIntegracaoSituacaoIntegracaoTela​(codigoIntegracaoSituacaoIntegracaoTela:String):void
 	setGrupoUsuario​(grupoUsuario:GrupoUsuario):void
@@ -2040,7 +2004,6 @@ export namespace GenericModelEmpresaGrupoUsuario.static {
 export class GenericModelPrimaryKey {
 	equals​(o:any):boolean
 	getId():String
-	getStringSelect​(campos:String, joins:String):String
 	hashCode():Integer
 	setId​(id:String):void
 	toString():String
@@ -2059,7 +2022,6 @@ export class GrupoCliente {
 	getNome():String
 	getPublico():Boolean
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	getTabelaPreco():TabelaPreco
 	getTipo():Dominio
 	setCodigoIntegracaoTabelaPreco​(codigoIntegracaoTabelaPreco:String):void
@@ -2089,7 +2051,6 @@ export class GrupoClienteEstoqueItem {
 	getIdUsuarioAdicionou():String
 	getIdUsuarioUltimaEdicao():String
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	setCodigoIntegracaoEstoqueItem​(codigoIntegracaoEstoqueItem:String):void
 	setCodigoIntegracaoGrupoCliente​(codigoIntegracaoGrupoCliente:String):void
 	setEstoqueItem​(estoqueItem:EstoqueItem):void
@@ -2109,7 +2070,6 @@ export namespace GrupoClienteEstoqueItem.static {
 export class GrupoUsuario {
 	getNome():String
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	setNome​(nome:String):void
 	setSituacao​(situacao:SituacaoGeneric):void
 	toString():String
@@ -2122,7 +2082,6 @@ export namespace GrupoUsuario.static {
 export class GrupoUsuarioUsuario {
 	getIdUsuario():String
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	getUsuario():Usuario
 	setIdUsuario​(idUsuario:String):void
 	setSituacao​(situacao:SituacaoGeneric):void
@@ -2140,7 +2099,6 @@ export class HistoricoAlteracao {
 	getEmpresa():Empresa
 	getEntidade():String
 	getIdEmpresa():String
-	getStringSelect​(campos:String, joins:String):String
 	setDataUltimaAtualizacao​(dataUltimaAtualizacao:DateTime):void
 	setEmpresa​(empresa:Empresa):void
 	setEntidade​(entidade:String):void
@@ -2188,7 +2146,6 @@ export class Inspecao {
 	getQuantidadeItens():BigDecimal
 	getSituacao():SituacaoInspecao
 	getSituacaoUsuario():Dominio
-	getStringSelect​(campos:String, joins:String):String
 	getTipo():TipoInspecao
 	getValorTotal():BigDecimal
 	setCliente​(cliente:Cliente):void
@@ -2275,7 +2232,6 @@ export class InspecaoItem {
 	getQuantidadeItens():BigDecimal
 	getSituacao():SituacaoGeneric
 	getSituacaoUsuario():Dominio
-	getStringSelect​(campos:String, joins:String):String
 	getTipoEstoqueItem():TipoEstoqueItem
 	getValorTotal():BigDecimal
 	getValorUnitario():BigDecimal
@@ -2332,7 +2288,6 @@ export class Integrador {
 	getDataUltimaCargaLimpa():DateTime
 	getIdEmpresa():String
 	getIdUsuario():String
-	getStringSelect​(campos:String, joins:String):String
 	getUsuario():Usuario
 	setDataUltimaCargaLimpa​(dataUltimaCargaLimpa:DateTime):void
 	setIdEmpresa​(idEmpresa:String):void
@@ -2374,7 +2329,6 @@ export class Material {
 	getNome():String
 	getPaisOrigem():Pais
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	getTipoMaterial():TipoMaterial
 	getTraducao():String
 	setCodigoIntegracaoCorPredominante​(codigoIntegracaoCorPredominante:String):void
@@ -2415,7 +2369,6 @@ export class Metadado {
 	getOrdenacao():Integer
 	getPesquisavel():Boolean
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	getTamanhoVisual():String
 	getTamanhoVisualEdicao():String
 	getTamanhoVisualLista():String
@@ -2490,7 +2443,6 @@ export class Moeda {
 	getNome():String
 	getSimbolo():String
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	setCasasDecimais​(casasDecimais:BigDecimal):void
 	setExibeLoja​(exibeLoja:Boolean):void
 	setIsoCode​(isoCode:String):void
@@ -2508,7 +2460,6 @@ export class MotivoCancelamento {
 	getEntidade():EntidadeIntegracao
 	getNome():String
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	setEntidade​(entidade:EntidadeIntegracao):void
 	setNome​(nome:String):void
 	setSituacao​(situacao:SituacaoGeneric):void
@@ -2566,7 +2517,6 @@ export class Negociacao {
 	getReservas():ArrayList<ReservaItem>
 	getSituacao():SituacaoNegociacao
 	getSituacaoUsuario():Dominio
-	getStringSelect​(campos:String, joins:String):String
 	getTipoFrete():TipoFrete
 	getTipoVenda():TipoVenda
 	getTotalizadores():String
@@ -2660,7 +2610,6 @@ export class NegociacaoItem {
 	getParecerCancelamento():String
 	getReservaItem():ReservaItem
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	getTabelaPrecoItem():TabelaPrecoItem
 	getValorImpostoDestacadoConvertido():BigDecimal
 	getValorTotalConvertido():BigDecimal
@@ -2734,7 +2683,6 @@ export class Oferta {
 	getQuantidadeVisualizacoesConferencia():Integer
 	getQuantidadeVisualizacoesEmail():Integer
 	getSituacao():SituacaoOferta
-	getStringSelect​(campos:String, joins:String):String
 	getTipoVenda():TipoVenda
 	getTotalizadores():String
 	getTotalizadoresMissionControl():String
@@ -2794,7 +2742,6 @@ export class OfertaCliente {
 	getQuantidadeVisualizacoesConferencia():Integer
 	getQuantidadeVisualizacoesEmail():Integer
 	getSituacao():SituacaoCancelavel
-	getStringSelect​(campos:String, joins:String):String
 	setCliente​(cliente:Cliente):void
 	setDataLimiteMissionControl​(dataLimiteMissionControl:DateTime):void
 	setIdCliente​(idCliente:String):void
@@ -2817,7 +2764,6 @@ export class OfertaClienteContato {
 	getIdOfertaCliente():String
 	getOfertaCliente():OfertaCliente
 	getSituacao():SituacaoCancelavel
-	getStringSelect​(campos:String, joins:String):String
 	setContato​(contato:Contato):void
 	setIdContato​(idContato:String):void
 	setIdOfertaCliente​(idOfertaCliente:String):void
@@ -2853,7 +2799,6 @@ export class OfertaItem {
 	getPeso():BigDecimal
 	getQuantidade():BigDecimal
 	getSituacao():SituacaoCancelavel
-	getStringSelect​(campos:String, joins:String):String
 	getTabelaPrecoItem():TabelaPrecoItem
 	getValorImpostoDestacado():BigDecimal
 	getValorImpostoDestacadoConvertido():BigDecimal
@@ -2908,7 +2853,6 @@ export class OfertaRejeicao {
 	getOferta():Oferta
 	getOfertaCliente():OfertaCliente
 	getOfertaItem():OfertaItem
-	getStringSelect​(campos:String, joins:String):String
 	setCliente​(cliente:Cliente):void
 	setIdCliente​(idCliente:String):void
 	setIdOferta​(idOferta:String):void
@@ -2967,7 +2911,6 @@ export class Oportunidade {
 	getQuantidadePlanejamento():BigDecimal
 	getSituacao():SituacaoOportunidade
 	getSituacaoUsuario():Dominio
-	getStringSelect​(campos:String, joins:String):String
 	getTipoVenda():TipoVenda
 	getTotalizadores():String
 	getTotalizadoresMissionControl():String
@@ -3045,7 +2988,6 @@ export class OportunidadeProduto {
 	getQuantidadeAtendida():BigDecimal
 	getQuantidadeSolicitada():BigDecimal
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	getTabelaPrecoItem():TabelaPrecoItem
 	getTipoEstoqueItem():TipoEstoqueItem
 	getValorTotalSolicitado():BigDecimal
@@ -3105,7 +3047,6 @@ export class OrdemCompra {
 	getQuantidadeSolicitada():BigDecimal
 	getSituacao():SituacaoOrdemCompra
 	getSituacaoUsuario():Dominio
-	getStringSelect​(campos:String, joins:String):String
 	getValorTotalAtendido():BigDecimal
 	getValorTotalSolicitado():BigDecimal
 	setCliente​(cliente:Cliente):void
@@ -3146,7 +3087,6 @@ export class Pais {
 	getIsoCode():String
 	getNome():String
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	getTraducao():String
 	setExibeLoja​(exibeLoja:Boolean):void
 	setIsoCode​(isoCode:String):void
@@ -3233,7 +3173,6 @@ export class Pedido {
 	getReservas():ArrayList<ReservaItem>
 	getSituacao():SituacaoPedido
 	getSituacaoUsuario():Dominio
-	getStringSelect​(campos:String, joins:String):String
 	getTipoFrete():TipoFrete
 	getTipoVenda():TipoVenda
 	getTotalizadores():String
@@ -3360,7 +3299,6 @@ export class PedidoItem {
 	getQuantidadeFaturada():BigDecimal
 	getReservaItem():ReservaItem
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	getTabelaPrecoItem():TabelaPrecoItem
 	getValorImpostoDestacado():BigDecimal
 	getValorImpostoDestacadoConvertido():BigDecimal
@@ -3432,7 +3370,6 @@ export class Pendencia {
 	getIdUsuarioCriacao():String
 	getParecer():String
 	getSituacao():SituacaoPendencia
-	getStringSelect​(campos:String, joins:String):String
 	getUsuarioAcao():Usuario
 	getUsuarioCriacao():Usuario
 	setDataAcao​(dataAcao:DateTime):void
@@ -3506,7 +3443,6 @@ export class Planejamento {
 	getRepresentante():Representante
 	getSituacao():SituacaoPlanejamento
 	getSituacaoUsuario():Dominio
-	getStringSelect​(campos:String, joins:String):String
 	getTipoFrete():TipoFrete
 	getTipoVenda():TipoVenda
 	getTotalizadores():String
@@ -3602,7 +3538,6 @@ export class PlanejamentoEstoqueItem {
 	getPedido():Pedido
 	getPlanejamento():Planejamento
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	getTabelaPrecoItem():TabelaPrecoItem
 	getTipo():TipoPlanejamentoEstoqueItem
 	getValorTotalSolicitado():BigDecimal
@@ -3661,7 +3596,6 @@ export class PlanejamentoProduto {
 	getQuantidadePedido():BigDecimal
 	getQuantidadeSolicitada():BigDecimal
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	getTabelaPrecoItem():TabelaPrecoItem
 	getTipoEstoqueItem():TipoEstoqueItem
 	getValorTotalSolicitado():BigDecimal
@@ -3726,7 +3660,6 @@ export class Produto {
 	getMaterial():Material
 	getNome():String
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	getTipoProduto():TipoProduto
 	getTraducao():String
 	setAcabamento​(acabamento:Acabamento):void
@@ -3768,7 +3701,6 @@ export class RegraIntegracao {
 	getIdUsuario():String
 	getRegra():String
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	getUsuario():Usuario
 	setCronAgendamento​(cronAgendamento:String):void
 	setDataFimUltimaExecucao​(dataFimUltimaExecucao:DateTime):void
@@ -3793,7 +3725,6 @@ export class Representante {
 	getIdTipo():String
 	getNome():String
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	getTipo():Dominio
 	setCodigoIntegracaoTipo​(codigoIntegracaoTipo:String):void
 	setIdTipo​(idTipo:String):void
@@ -3838,7 +3769,6 @@ export class ReservaItem {
 	getQuantidadeFaturada():BigDecimal
 	getQuantidadeFaturadaNaoContabilizada():BigDecimal
 	getSituacao():SituacaoReservaItem
-	getStringSelect​(campos:String, joins:String):String
 	getTabelaPrecoItem():TabelaPrecoItem
 	getValorImpostoDestacadoConvertido():BigDecimal
 	getValorTotalConvertido():BigDecimal
@@ -3909,7 +3839,6 @@ export class RetornoIntegracao {
 	getMensagem():String
 	getPendenteEnvio():Boolean
 	getSituacao():RetornoIntegracao.Situacao
-	getStringSelect​(campos:String, joins:String):String
 	setCodigoIntegracao​(codigoIntegracao:String):void
 	setDataInclusao​(dataInclusao:DateTime):void
 	setEntidade​(entidade:EntidadeIntegracao):void
@@ -4011,7 +3940,6 @@ export class SituacaoIntegracaoTela {
 	getPadrao():Boolean
 	getPermiteEdicao():Boolean
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	setEntidade​(entidade:EntidadeIntegracao):void
 	setNecessitaIntegracao​(necessitaIntegracao:Boolean):void
 	setNome​(nome:String):void
@@ -4077,7 +4005,6 @@ export class Sugestao {
 	getIdEntidade():String
 	getRelevancia():BigDecimal
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	getTipo():String
 	getValor():String
 	setCliente​(cliente:Cliente):void
@@ -4103,7 +4030,6 @@ export class TabelaPreco {
 	getNome():String
 	getPublico():Boolean
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	setNome​(nome:String):void
 	setPublico​(publico:Boolean):void
 	setSituacao​(situacao:SituacaoGeneric):void
@@ -4129,7 +4055,6 @@ export class TabelaPrecoItem {
 	getPercentualImpostoDestacado():BigDecimal
 	getProduto():Produto
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	getTabelaPreco():TabelaPreco
 	getTipoTabelaPrecoItem():TipoTabelaPrecoItem
 	getValorMinimo():BigDecimal
@@ -4165,7 +4090,6 @@ export class Tag {
 	getKeyText():String
 	getNome():String
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	getTipoEntidade():String
 	setEntidade​(entidade:EntidadeIntegracao):void
 	setIntegravel​(integravel:Boolean):void
@@ -4204,7 +4128,6 @@ export class Tarefa {
 	getIdUsuario():String
 	getNome():String
 	getSituacao():SituacaoTarefa
-	getStringSelect​(campos:String, joins:String):String
 	getTexto():String
 	getTipo():TipoTarefa
 	getUsuario():Usuario
@@ -4238,7 +4161,6 @@ export namespace Tarefa.static {
 export class TipoCliente {
 	getNome():String
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	setNome​(nome:String):void
 	setSituacao​(situacao:SituacaoGeneric):void
 	toString():String
@@ -4252,7 +4174,6 @@ export class TipoCustomForm {
 	getConfiguracao():String
 	getNome():String
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	setConfiguracao​(configuracao:String):void
 	setNome​(nome:String):void
 	setSituacao​(situacao:SituacaoGeneric):void
@@ -4279,7 +4200,6 @@ export class TipoEstoqueItem {
 	getNomeUrl():String
 	getPermiteAlterarMedidasVenda():Boolean
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	getTipoCalculoQuantidade():TipoEstoqueItemTipoCalculoQuantidade
 	getTipoEstoqueItemAgrupamento():TipoEstoqueItem
 	getTipoEstoqueItemOrigem():TipoEstoqueItem
@@ -4321,7 +4241,6 @@ export namespace TipoEstoqueItem.static {
 export class TipoFrete {
 	getNome():String
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	getTraducao():String
 	setNome​(nome:String):void
 	setSituacao​(situacao:SituacaoGeneric):void
@@ -4338,7 +4257,6 @@ export class TipoMaterial {
 	getKeyText():String
 	getNome():String
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	getTraducao():String
 	setExibeLoja​(exibeLoja:Boolean):void
 	setKey​(key:String):void
@@ -4358,7 +4276,6 @@ export class TipoProduto {
 	getKeyText():String
 	getNome():String
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	getTipoCalculoValor():TipoProdutoTipoCalculoValor
 	getTipoMetragem():TipoProdutoTipoMetragem
 	getTraducao():String
@@ -4390,7 +4307,6 @@ export namespace TipoProduto.static {
 export class TipoTarefa {
 	getNome():String
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	setNome​(nome:String):void
 	setSituacao​(situacao:SituacaoGeneric):void
 	toString():String
@@ -4403,7 +4319,6 @@ export namespace TipoTarefa.static {
 export class TipoVenda {
 	getNome():String
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	setNome​(nome:String):void
 	setSituacao​(situacao:SituacaoGeneric):void
 	toString():String
@@ -4428,7 +4343,6 @@ export class TituloVenda {
 	getNome():String
 	getObservacao():String
 	getSituacao():SituacaoTituloVenda
-	getStringSelect​(campos:String, joins:String):String
 	getValorAberto():BigDecimal
 	getValorOriginal():BigDecimal
 	getValorRecebido():BigDecimal
@@ -4468,7 +4382,6 @@ export class Usuario {
 	getSenha():String
 	getSituacao():SituacaoGeneric
 	getSituacaoIntegracao():SituacaoIntegracao
-	getStringSelect​(campos:String, joins:String):String
 	getUsername():String
 	setEmail​(email:String):void
 	setIntegrador​(integrador:Boolean):void
@@ -4492,7 +4405,6 @@ export class UsuarioEmpresa {
 	getIdGrupoUsuarioPadrao():String
 	getIdUsuario():String
 	getSituacao():SituacaoGeneric
-	getStringSelect​(campos:String, joins:String):String
 	getUsuario():Usuario
 	setAdministrador​(administrador:Boolean):void
 	setBannerLoja​(bannerLoja:String):void
