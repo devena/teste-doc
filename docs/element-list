@@ -1,4 +1,5 @@
 com.mobgran.js.client
+com.mobgran.js.component
 com.mobgran.js.dao
 com.mobgran.js.exception
 com.mobgran.js.service

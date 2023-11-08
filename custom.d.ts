@@ -313,6 +313,13 @@ export class ClientBaseDAO {
 	updateMap​(nomeTabela:String, campos:HashMap<String,any>, where:HashMap<String,any>):Integer
 }
 
+export class CacheJsComponent {
+	adicionar​(key:String, value:any):void
+	adicionarSeNaoExistir​(key:String, value:any):void
+	existe​(key:String):boolean
+	remover​(key:String):void
+}
+
 export class JSException {
 	getArgs():any[]
 	getKey():String
