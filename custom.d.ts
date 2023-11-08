@@ -301,23 +301,23 @@ export namespace Map{
 		setValue(value:V):V
 	}
 }
-export class ClientBaseDAO {
-	insert​<T>(t:T):Integer
-	insertMap​(nomeTabela:String, campos:HashMap<String,any>):Integer
-	rodarDelete​(sql:String, ...params:any):void
-	rodarInsert​(sql:String, ...params:any):Integer
-	rodarSelect​<E>(sql:String, clazz:E, ...params:any): E
-	rodarSelectList​<E>(sql:String, clazz:E, ...params:any): ArrayList<E>
-	rodarUpdate​(sql:String, ...params:any):Integer
-	update​<T>(t:T):Integer
-	updateMap​(nomeTabela:String, campos:HashMap<String,any>, where:HashMap<String,any>):Integer
+export namespace ClientBaseDAO {
+	export function insert<T>(t:T):Integer
+	export function insertMap​(nomeTabela:String, campos:HashMap<String,any>):Integer
+	export function rodarDelete​(sql:String, ...params:any):void
+	export function rodarInsert​(sql:String, ...params:any):Integer
+	export function rodarSelect​<E>(sql:String, clazz:E, ...params:any): E
+	export function rodarSelectList​<E>(sql:String, clazz:E, ...params:any): ArrayList<E>
+	export function rodarUpdate​(sql:String, ...params:any):Integer
+	export function update<T>(t:T):Integer
+	export function updateMap​(nomeTabela:String, campos:HashMap<String,any>, where:HashMap<String,any>):Integer
 }
 
-export class CacheJsComponent {
-	adicionar​(key:String, value:any):void
-	adicionarSeNaoExistir​(key:String, value:any):void
-	existe​(key:String):boolean
-	remover​(key:String):void
+export namespace CacheJsComponent {
+	export function adicionar​(key:String, value:any):void
+	export function adicionarSeNaoExistir​(key:String, value:any):void
+	export function existe​(key:String):boolean
+	export function remover​(key:String):void
 }
 
 export class JSException {
