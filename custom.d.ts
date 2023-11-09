@@ -471,7 +471,7 @@ export namespace UUIDJSUtils.static {
 	export function novoSimples():String
 }
 
-export class AbsOfertaEstoque {
+export class AbsOfertaEstoque extends GenericModelEmpresaGrupoUsuario {
 	getAltura():BigDecimal
 	getCodigoIntegracaoEstoqueItem():String
 	getComprimento():BigDecimal
@@ -505,7 +505,7 @@ export namespace AbsOfertaEstoque.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class Acabamento {
+export class Acabamento extends GenericModelEmpresa {
 	getExibeLoja():Boolean
 	getKeyText():String
 	getNome():String
@@ -524,7 +524,7 @@ export namespace Acabamento.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class Anexo {
+export class Anexo extends GenericModelEmpresaGrupoUsuario {
 	getAnexoInverso():Anexo
 	getCodigoIntegracaoAnexoInverso():String
 	getCodigoIntegracaoDominioAreaCliente():String
@@ -683,7 +683,7 @@ export namespace AnexoPath.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class AtendimentoCliente {
+export class AtendimentoCliente extends GenericModelEmpresaGrupoUsuario {
 	getCampanha():Campanha
 	getCliente():Cliente
 	getCodigoIntegracaoCampanha():String
@@ -725,7 +725,7 @@ export namespace AtendimentoCliente.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class CabecalhoVendaBase<S> {
+export class CabecalhoVendaBase<S> extends GenericModelEmpresaGrupoUsuario {
 	getCliente():Cliente
 	getCondicaoPagamento():CondicaoPagamento
 	getCustoTotal():BigDecimal
@@ -777,7 +777,7 @@ export class CabecalhoVendaBase<S> {
 	toString():String
 }
 
-export class Campanha {
+export class Campanha extends GenericModelEmpresaGrupoUsuario {
 	getCodigoIntegracaoTipoVenda():String
 	getDataFim():DateTime
 	getDataInicio():DateTime
@@ -799,7 +799,7 @@ export namespace Campanha.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class Categoria {
+export class Categoria extends GenericModelEmpresa {
 	getCategoriaPai():Categoria
 	getCodigoIntegracaoCategoriaPai():String
 	getConfiguracoesLoja():String
@@ -827,7 +827,7 @@ export namespace Categoria.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class CategoriaHomeLoja {
+export class CategoriaHomeLoja extends GenericModelEmpresaGrupoUsuario {
 	getOrdem():Integer
 	getPublico():Boolean
 	getSituacao():SituacaoGeneric
@@ -845,7 +845,7 @@ export namespace CategoriaHomeLoja.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class CategoriaHomeLojaCategoria {
+export class CategoriaHomeLojaCategoria extends GenericModelEmpresaGrupoUsuario {
 	getCategoria():Categoria
 	getCategoriaHomeLoja():CategoriaHomeLoja
 	getCodigoIntegracaoCategoria():String
@@ -869,7 +869,7 @@ export namespace CategoriaHomeLojaCategoria.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class CategoriaHomeLojaEstoqueItem {
+export class CategoriaHomeLojaEstoqueItem extends GenericModelEmpresaGrupoUsuario {
 	getCategoriaHomeLoja():CategoriaHomeLoja
 	getCodigoIntegracaoCategoriaHomeLoja():String
 	getCodigoIntegracaoEstoqueItem():String
@@ -893,7 +893,7 @@ export namespace CategoriaHomeLojaEstoqueItem.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class CategoriaProduto {
+export class CategoriaProduto extends GenericModelEmpresa {
 	getCategoria():Categoria
 	getCodigoIntegracaoCategoria():String
 	getCodigoIntegracaoProduto():String
@@ -915,7 +915,7 @@ export namespace CategoriaProduto.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class Classificacao {
+export class Classificacao extends GenericModelEmpresa {
 	getExibeLoja():Boolean
 	getKeyText():String
 	getNome():String
@@ -934,7 +934,7 @@ export namespace Classificacao.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class Cliente {
+export class Cliente extends GenericModelEmpresaGrupoUsuario {
 	getAgrupadores():String
 	getBannerEstoqueLoja():String
 	getBannerHomeLoja():String
@@ -1030,7 +1030,7 @@ export namespace Cliente.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class Comentario {
+export class Comentario extends GenericModelEmpresaGrupoUsuario {
 	getCliente():Cliente
 	getEntidade():EntidadeIntegracao
 	getIdCliente():String
@@ -1056,7 +1056,7 @@ export namespace Comentario.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class CondicaoPagamento {
+export class CondicaoPagamento extends GenericModelEmpresa {
 	getNome():String
 	getSituacao():SituacaoGeneric
 	getTraducao():String
@@ -1086,7 +1086,7 @@ export class ContaEnvio {
 	toString():String
 }
 
-export class Contato {
+export class Contato extends GenericModelEmpresaGrupoUsuario {
 	getCodigoIntegracaoEntidade():String
 	getDataBloqueio():DateTime
 	getDataNascimento():DateTime
@@ -1138,7 +1138,7 @@ export namespace ContatoTipo.static {
 
 export function values(): ContatoTipo;}
 
-export class Cor {
+export class Cor extends GenericModelEmpresa {
 	getExibeLoja():Boolean
 	getNome():String
 	getSituacao():SituacaoGeneric
@@ -1154,7 +1154,7 @@ export namespace Cor.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class CotacaoMoeda {
+export class CotacaoMoeda extends GenericModelEmpresa {
 	getCodigoIntegracaoMoedaDestino():String
 	getCodigoIntegracaoMoedaOrigem():String
 	getDataCotacao():DateTime
@@ -1178,7 +1178,7 @@ export namespace CotacaoMoeda.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class CreditoCliente {
+export class CreditoCliente extends GenericModelEmpresaGrupoUsuario {
 	getCliente():Cliente
 	getIdCliente():String
 	getIdMoeda():String
@@ -1214,7 +1214,7 @@ export namespace CreditoCliente.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class CustomForm {
+export class CustomForm extends GenericModelEmpresaGrupoUsuario {
 	getCodigoIntegracaoMotivoCancelamento():String
 	getCodigoIntegracaoTipoCustomForm():String
 	getCodigoIntegracaoUsuario():String
@@ -1254,7 +1254,7 @@ export namespace CustomForm.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class CustomFormItem {
+export class CustomFormItem extends GenericModelEmpresaGrupoUsuario {
 	getArea():String
 	getCodigoIntegracaoCustomForm():String
 	getCodigoIntegracaoCustomFormItemAgrupamento():String
@@ -1302,7 +1302,7 @@ export namespace CustomFormItem.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class Deposito {
+export class Deposito extends GenericModelEmpresa {
 	getExibeLoja():Boolean
 	getNome():String
 	getSituacao():SituacaoGeneric
@@ -1349,7 +1349,7 @@ export namespace DisponibilidadeDTO.static {
 	export function ok​(hash:String):DisponibilidadeDTO
 }
 
-export class Dominio {
+export class Dominio extends GenericModelEmpresa {
 	getNome():String
 	getSituacao():SituacaoGeneric
 	getTipo():EntidadeIntegracao
@@ -1363,7 +1363,7 @@ export namespace Dominio.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class Empresa {
+export class Empresa extends GenericModel {
 	getAccesskeyContaEnvio():String
 	getAnexoEstoqueSemImagem():Anexo
 	getAnexoImagemFundoConferencia():Anexo
@@ -1437,7 +1437,7 @@ export namespace Empresa.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class Endereco {
+export class Endereco extends GenericModelEmpresaGrupoUsuario {
 	getCidade():String
 	getCliente():Cliente
 	getCodigoIntegracaoEntidade():String
@@ -1497,7 +1497,7 @@ export namespace EntidadeCarga.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class Espessura {
+export class Espessura extends GenericModelEmpresa {
 	getExibeLoja():Boolean
 	getKeyText():String
 	getNome():String
@@ -1516,7 +1516,7 @@ export namespace Espessura.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class EstoqueItem {
+export class EstoqueItem extends GenericModelEmpresaGrupoUsuario {
 	getAlturaBruta():BigDecimal
 	getAlturaLiquida():BigDecimal
 	getClienteFaturadoIntegracao():Cliente
@@ -1663,7 +1663,7 @@ export interface ExtraIntegradorInterface {
 	setExtraIntegrador​(extraIntegrador:String):void
 }
 
-export class FaseTarefa {
+export class FaseTarefa extends GenericModelEmpresa {
 	getIdTipoTarefa():String
 	getNome():String
 	getOrdem():Integer
@@ -1681,7 +1681,7 @@ export namespace FaseTarefa.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class Faturamento {
+export class Faturamento extends GenericModelEmpresaGrupoUsuario {
 	getCampanha():Campanha
 	getCliente():Cliente
 	getCodigoIntegracaoCampanha():String
@@ -1823,7 +1823,7 @@ export namespace Faturamento.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class FaturamentoItem {
+export class FaturamentoItem extends GenericModelEmpresaGrupoUsuario {
 	getAltura():BigDecimal
 	getCodigoIntegracaoEstoqueItem():String
 	getCodigoIntegracaoFaturamento():String
@@ -1932,7 +1932,7 @@ export namespace FaturamentoItem.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class FormaPagamento {
+export class FormaPagamento extends GenericModelEmpresa {
 	getNome():String
 	getSituacao():SituacaoGeneric
 	getTraducao():String
@@ -1946,7 +1946,7 @@ export namespace FormaPagamento.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class Fornecedor {
+export class Fornecedor extends GenericModelEmpresaGrupoUsuario {
 	getCodigoIntegracaoEnderecoPrincipal():String
 	getCodigoIntegracaoTipo():String
 	getEnderecoPrincipal():Endereco
@@ -1970,7 +1970,7 @@ export namespace Fornecedor.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class GenericModel {
+export class GenericModel extends GenericModelPrimaryKey {
 	getDataInclusao():DateTime
 	getDataUltimaAtualizacao():DateTime
 	getIdRequisicaoAlteracao():String
@@ -1986,7 +1986,7 @@ export namespace GenericModel.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class GenericModelEmpresa {
+export class GenericModelEmpresa extends GenericModel {
 	getAnexoPadrao():Anexo
 	getCodigo():String
 	getCodigoIntegracao():String
@@ -2024,7 +2024,7 @@ export namespace GenericModelEmpresa.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class GenericModelEmpresaGrupoUsuario {
+export class GenericModelEmpresaGrupoUsuario extends GenericModelEmpresa {
 	getCodigoIntegracaoGrupoUsuario():String
 	getCodigoIntegracaoSituacaoIntegracaoTela():String
 	getGrupoUsuario():GrupoUsuario
@@ -2056,7 +2056,7 @@ export namespace GenericModelPrimaryKey.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class GrupoCliente {
+export class GrupoCliente extends GenericModelEmpresaGrupoUsuario {
 	getCodigoIntegracaoTabelaPreco():String
 	getCodigoIntegracaoTipo():String
 	getDescricao():String
@@ -2084,7 +2084,7 @@ export namespace GrupoCliente.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class GrupoClienteEstoqueItem {
+export class GrupoClienteEstoqueItem extends GenericModelEmpresaGrupoUsuario {
 	getCodigoIntegracaoEstoqueItem():String
 	getCodigoIntegracaoGrupoCliente():String
 	getEstoqueItem():EstoqueItem
@@ -2110,7 +2110,7 @@ export namespace GrupoClienteEstoqueItem.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class GrupoUsuario {
+export class GrupoUsuario extends GenericModelEmpresa {
 	getNome():String
 	getSituacao():SituacaoGeneric
 	setNome​(nome:String):void
@@ -2122,7 +2122,7 @@ export namespace GrupoUsuario.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class GrupoUsuarioUsuario {
+export class GrupoUsuarioUsuario extends GenericModelEmpresaGrupoUsuario {
 	getIdUsuario():String
 	getSituacao():SituacaoGeneric
 	getUsuario():Usuario
@@ -2153,7 +2153,7 @@ export namespace HistoricoAlteracao.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class Inspecao {
+export class Inspecao extends GenericModelEmpresaGrupoUsuario {
 	getCliente():Cliente
 	getCodigoIntegracaoCliente():String
 	getCodigoIntegracaoDeposito():String
@@ -2235,7 +2235,7 @@ export namespace Inspecao.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class InspecaoItem {
+export class InspecaoItem extends GenericModelEmpresaGrupoUsuario {
 	getAlturaBruta():BigDecimal
 	getAlturaLiquida():BigDecimal
 	getCodigoIntegracaoEstoqueItem():String
@@ -2359,7 +2359,7 @@ export class IntegradorHeader {
 	toString():String
 }
 
-export class Material {
+export class Material extends GenericModelEmpresa {
 	getCodigoIntegracaoCorPredominante():String
 	getCodigoIntegracaoPaisOrigem():String
 	getCodigoIntegracaoTipoMaterial():String
@@ -2395,7 +2395,7 @@ export namespace Material.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class Metadado {
+export class Metadado extends GenericModelEmpresa {
 	getConfiguracao():String
 	getDescricao():String
 	getEditavel():Boolean
@@ -2482,7 +2482,7 @@ export namespace MetadadoTipo.static {
 
 export function values(): MetadadoTipo;}
 
-export class Moeda {
+export class Moeda extends GenericModelEmpresa {
 	getCasasDecimais():BigDecimal
 	getExibeLoja():Boolean
 	getIsoCode():String
@@ -2502,7 +2502,7 @@ export namespace Moeda.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class MotivoCancelamento {
+export class MotivoCancelamento extends GenericModelEmpresaGrupoUsuario {
 	getEntidade():EntidadeIntegracao
 	getNome():String
 	getSituacao():SituacaoGeneric
@@ -2516,7 +2516,7 @@ export namespace MotivoCancelamento.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class Negociacao {
+export class Negociacao extends GenericModelEmpresaGrupoUsuario {
 	getCampanha():Campanha
 	getCliente():Cliente
 	getCodigoIntegracaoCampanha():String
@@ -2630,7 +2630,7 @@ export namespace Negociacao.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class NegociacaoItem {
+export class NegociacaoItem extends AbsOfertaEstoque {
 	getCodigoIntegracaoEstoqueItemAgrupamentoOriginal():String
 	getCodigoIntegracaoMoeda():String
 	getCodigoIntegracaoMoedaConversao():String
@@ -2698,7 +2698,7 @@ export namespace NegociacaoItem.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class Oferta {
+export class Oferta extends GenericModelEmpresaGrupoUsuario {
 	getCampanha():Campanha
 	getClienteUnico():Cliente
 	getCodigoIntegracaoCampanha():String
@@ -2778,7 +2778,7 @@ export namespace Oferta.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class OfertaCliente {
+export class OfertaCliente extends GenericModelEmpresaGrupoUsuario {
 	getCliente():Cliente
 	getDataLimiteMissionControl():DateTime
 	getIdCliente():String
@@ -2804,7 +2804,7 @@ export namespace OfertaCliente.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class OfertaClienteContato {
+export class OfertaClienteContato extends GenericModelEmpresaGrupoUsuario {
 	getContato():Contato
 	getIdContato():String
 	getIdOfertaCliente():String
@@ -2822,7 +2822,7 @@ export namespace OfertaClienteContato.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class OfertaItem {
+export class OfertaItem extends GenericModelEmpresaGrupoUsuario {
 	getAltura():BigDecimal
 	getCodigoIntegracaoEstoqueItem():String
 	getCodigoIntegracaoMoedaConversao():String
@@ -2890,7 +2890,7 @@ export namespace OfertaItem.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class OfertaRejeicao {
+export class OfertaRejeicao extends GenericModelEmpresaGrupoUsuario {
 	getCliente():Cliente
 	getIdCliente():String
 	getIdOferta():String
@@ -2914,7 +2914,7 @@ export namespace OfertaRejeicao.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class Oportunidade {
+export class Oportunidade extends GenericModelEmpresaGrupoUsuario {
 	getCampanha():Campanha
 	getCliente():Cliente
 	getCodigoIntegracaoCampanha():String
@@ -3016,7 +3016,7 @@ export namespace Oportunidade.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class OportunidadeProduto {
+export class OportunidadeProduto extends GenericModelEmpresaGrupoUsuario {
 	getCodigoIntegracaoMoedaOriginal():String
 	getCodigoIntegracaoOportunidade():String
 	getCodigoIntegracaoProduto():String
@@ -3068,7 +3068,7 @@ export namespace OportunidadeProduto.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class OrdemCompra {
+export class OrdemCompra extends GenericModelEmpresaGrupoUsuario {
 	getCliente():Cliente
 	getCodigoIntegracaoCliente():String
 	getCodigoIntegracaoDeposito():String
@@ -3128,7 +3128,7 @@ export namespace OrdemCompra.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class Pais {
+export class Pais extends GenericModelEmpresa {
 	getExibeLoja():Boolean
 	getIsoCode():String
 	getNome():String
@@ -3158,7 +3158,7 @@ export class PathDTO {
 	toString():String
 }
 
-export class Pedido {
+export class Pedido extends GenericModelEmpresaGrupoUsuario {
 	getCampanha():Campanha
 	getCliente():Cliente
 	getCodigoIntegracaoCampanha():String
@@ -3307,7 +3307,7 @@ export class PedidoExtraIntegrador {
 	setFaturamentoConcluido​(faturamentoConcluido:String):void
 }
 
-export class PedidoItem {
+export class PedidoItem extends GenericModelEmpresaGrupoUsuario {
 	getAltura():BigDecimal
 	getCodigoIntegracaoEstoqueItem():String
 	getCodigoIntegracaoEstoqueItemAgrupamentoOriginal():String
@@ -3405,7 +3405,7 @@ export namespace PedidoItem.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class Pendencia {
+export class Pendencia extends GenericModelEmpresaGrupoUsuario {
 	getDataAcao():DateTime
 	getDescricaoPendencia():String
 	getDominio():Dominio
@@ -3437,7 +3437,7 @@ export namespace Pendencia.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class Planejamento {
+export class Planejamento extends GenericModelEmpresaGrupoUsuario {
 	getCampanha():Campanha
 	getCliente():Cliente
 	getCodigoIntegracaoCampanha():String
@@ -3561,7 +3561,7 @@ export namespace Planejamento.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class PlanejamentoEstoqueItem {
+export class PlanejamentoEstoqueItem extends GenericModelEmpresaGrupoUsuario {
 	getCodigoIntegracaoEstoqueItem():String
 	getCodigoIntegracaoEstoqueItemAgrupamentoOriginal():String
 	getCodigoIntegracaoMoedaOriginal():String
@@ -3623,7 +3623,7 @@ export namespace PlanejamentoEstoqueItem.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class PlanejamentoProduto {
+export class PlanejamentoProduto extends GenericModelEmpresaGrupoUsuario {
 	getCodigoIntegracaoMoedaOriginal():String
 	getCodigoIntegracaoPlanejamento():String
 	getCodigoIntegracaoProduto():String
@@ -3689,7 +3689,7 @@ export namespace Processo.static {
 
 export function values(): Processo;}
 
-export class Produto {
+export class Produto extends GenericModelEmpresa {
 	getAcabamento():Acabamento
 	getClassificacao():Classificacao
 	getCodigoIntegracaoAcabamento():String
@@ -3739,7 +3739,7 @@ export namespace Produto.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class RegraIntegracao {
+export class RegraIntegracao extends GenericModelEmpresa {
 	getCronAgendamento():String
 	getDataFimUltimaExecucao():DateTime
 	getDataInicioUltimaExecucao():DateTime
@@ -3769,7 +3769,7 @@ export namespace RegraIntegracao.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class Representante {
+export class Representante extends GenericModelEmpresaGrupoUsuario {
 	getCodigoIntegracaoTipo():String
 	getIdTipo():String
 	getNome():String
@@ -3787,7 +3787,7 @@ export namespace Representante.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class ReservaItem {
+export class ReservaItem extends AbsOfertaEstoque {
 	getCliente():Cliente
 	getCodigoEntidade():String
 	getCodigoIntegracaoCliente():String
@@ -4003,7 +4003,7 @@ export namespace SituacaoGeneric.static {
 
 export function values(): SituacaoGeneric;}
 
-export class SituacaoIntegracaoTela {
+export class SituacaoIntegracaoTela extends GenericModelEmpresa {
 	getEntidade():EntidadeIntegracao
 	getNecessitaIntegracao():Boolean
 	getNome():String
@@ -4076,7 +4076,7 @@ export namespace SituacaoTituloVenda.static {
 
 export function values(): SituacaoTituloVenda;}
 
-export class Sugestao {
+export class Sugestao extends GenericModelEmpresaGrupoUsuario {
 	getCliente():Cliente
 	getCodigoIntegracaoCliente():String
 	getCodigoIntegracaoDominio():String
@@ -4108,7 +4108,7 @@ export namespace Sugestao.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class TabelaPreco {
+export class TabelaPreco extends GenericModelEmpresaGrupoUsuario {
 	getNome():String
 	getPublico():Boolean
 	getSituacao():SituacaoGeneric
@@ -4122,7 +4122,7 @@ export namespace TabelaPreco.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class TabelaPrecoItem {
+export class TabelaPrecoItem extends GenericModelEmpresaGrupoUsuario {
 	getCodigoIntegracaoEstoqueItem():String
 	getCodigoIntegracaoMoeda():String
 	getCodigoIntegracaoProduto():String
@@ -4166,7 +4166,7 @@ export namespace TabelaPrecoItem.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class Tag {
+export class Tag extends GenericModelEmpresa {
 	getEntidade():EntidadeIntegracao
 	getIntegravel():Boolean
 	getKeyText():String
@@ -4192,7 +4192,7 @@ export interface TagInterface {
 	setMetadados​(metadado:String):void
 }
 
-export class Tarefa {
+export class Tarefa extends GenericModelEmpresaGrupoUsuario {
 	getCampanha():Campanha
 	getCodigoIntegracaoCampanha():String
 	getCodigoIntegracaoEntidade():String
@@ -4240,7 +4240,7 @@ export namespace Tarefa.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class TipoCliente {
+export class TipoCliente extends GenericModelEmpresa {
 	getNome():String
 	getSituacao():SituacaoGeneric
 	setNome​(nome:String):void
@@ -4252,7 +4252,7 @@ export namespace TipoCliente.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class TipoCustomForm {
+export class TipoCustomForm extends GenericModelEmpresaGrupoUsuario {
 	getConfiguracao():String
 	getNome():String
 	getSituacao():SituacaoGeneric
@@ -4266,7 +4266,7 @@ export namespace TipoCustomForm.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class TipoEstoqueItem {
+export class TipoEstoqueItem extends GenericModelEmpresa {
 	getConfiguracao():String
 	getContabilizaFaturamento():Boolean
 	getContabilizaFilho():Boolean
@@ -4320,7 +4320,7 @@ export namespace TipoEstoqueItem.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class TipoFrete {
+export class TipoFrete extends GenericModelEmpresa {
 	getNome():String
 	getSituacao():SituacaoGeneric
 	getTraducao():String
@@ -4334,7 +4334,7 @@ export namespace TipoFrete.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class TipoMaterial {
+export class TipoMaterial extends GenericModelEmpresa {
 	getExibeLoja():Boolean
 	getKeyText():String
 	getNome():String
@@ -4353,7 +4353,7 @@ export namespace TipoMaterial.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class TipoProduto {
+export class TipoProduto extends GenericModelEmpresa {
 	getConfiguracao():String
 	getKeyText():String
 	getNome():String
@@ -4386,7 +4386,7 @@ export namespace TipoProduto.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class TipoTarefa {
+export class TipoTarefa extends GenericModelEmpresaGrupoUsuario {
 	getNome():String
 	getSituacao():SituacaoGeneric
 	setNome​(nome:String):void
@@ -4398,7 +4398,7 @@ export namespace TipoTarefa.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class TipoVenda {
+export class TipoVenda extends GenericModelEmpresa {
 	getNome():String
 	getSituacao():SituacaoGeneric
 	setNome​(nome:String):void
@@ -4410,7 +4410,7 @@ export namespace TipoVenda.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class TituloVenda {
+export class TituloVenda extends GenericModelEmpresaGrupoUsuario {
 	calcularSituacao():SituacaoTituloVenda
 	getCliente():Cliente
 	getCodigoIntegracaoCliente():String
@@ -4456,7 +4456,7 @@ export interface TraducaoInterface {
 	setTraducao​(traducao:String):void
 }
 
-export class Usuario {
+export class Usuario extends GenericModel {
 	getEmail():String
 	getIntegrador():Boolean
 	getMaster():Boolean
@@ -4480,7 +4480,7 @@ export namespace Usuario.static {
 	export function getStringSelectStatic​(campos:String, joins:String):String
 }
 
-export class UsuarioEmpresa {
+export class UsuarioEmpresa extends GenericModelEmpresa {
 	getAdministrador():Boolean
 	getBannerLoja():String
 	getGrupoUsuarioPadrao():GrupoUsuario
