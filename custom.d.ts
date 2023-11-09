@@ -11,6 +11,10 @@
     export function print(args:any):void;
   
   
+  export function ehIgual(value1:any, value2:any):boolean;
+  export function equals(value1:any, value2:any):boolean;
+  
+  
   export class HashMap<K,V> {
 	clear():void
 	clone():Object
@@ -317,6 +321,7 @@ export namespace CacheJsComponent {
 	export function adicionar​(key:String, value:any):void
 	export function adicionarSeNaoExistir​(key:String, value:any):void
 	export function existe​(key:String):boolean
+	export function get​(key:String):any
 	export function remover​(key:String):void
 }
 
@@ -333,10 +338,28 @@ export namespace AcabamentoJSService {
 	export function salvar​(value:Acabamento):Acabamento
 }
 
+export namespace ClassificacaoJSService {
+	export function buscaPorCodigoIntegracao​(codigo:String):Classificacao
+	export function buscaPorId​(id:String):Classificacao
+	export function salvar​(value:Classificacao):Classificacao
+}
+
 export namespace ClienteJSService {
 	export function desbloquear​(id:String):void
 	export function buscaPorCodigoIntegracao​(codigo:String):Cliente
 	export function buscaPorId​(id:String):Cliente
+}
+
+export namespace EspessuraJSService {
+	export function buscaPorCodigoIntegracao​(codigo:String):Espessura
+	export function buscaPorId​(id:String):Espessura
+	export function salvar​(value:Espessura):Espessura
+}
+
+export namespace MaterialJSService {
+	export function buscaPorCodigoIntegracao​(codigo:String):Material
+	export function buscaPorId​(id:String):Material
+	export function salvar​(value:Material):Material
 }
 
 export class ArrayListJSUtils {
@@ -413,6 +436,7 @@ export namespace JsonJSUtils.static {
 	export function parseObservadores​(observadores:String):HashSet<String>
 	export function parseParaClasse​<T>(json:String, classe:(new () => T)): T
 	export function parseTags​(tags:String):HashSet<String>
+	export function readPath​<T>(json:String, path:String): T
 	export function toJson​(val:any):String
 }
 
@@ -563,12 +587,15 @@ export namespace Anexo.static {
 }
 
 export namespace AnexoDTO.static.TipoProcessamento {
-	export interface AnexoDTO$TipoProcessamento {}
+	export interface AnexoDTO$TipoProcessamento {
+      name():String
+    }
 
 	export const BYTE_ARRAY: AnexoDTO$TipoProcessamento;
 	export const MD5: AnexoDTO$TipoProcessamento;
 	export const PATH: AnexoDTO$TipoProcessamento;
-}
+
+export function values(): TipoProcessamento;}
 
 export namespace AnexoDTO {
 export type TipoProcessamento = AnexoDTO.static.TipoProcessamento.AnexoDTO$TipoProcessamento;
@@ -620,11 +647,14 @@ export class AnexoDTO {
 }
 
 export namespace AnexoExtraIntegrador.static.Tipo {
-	export interface AnexoExtraIntegrador$Tipo {}
+	export interface AnexoExtraIntegrador$Tipo {
+      name():String
+    }
 
 	export const BINARY: AnexoExtraIntegrador$Tipo;
 	export const PATH: AnexoExtraIntegrador$Tipo;
-}
+
+export function values(): Tipo;}
 
 export namespace AnexoExtraIntegrador {
 export type Tipo = AnexoExtraIntegrador.static.Tipo.AnexoExtraIntegrador$Tipo;
@@ -1100,10 +1130,13 @@ export namespace Contato.static {
 
 export type ContatoTipo = ContatoTipo.static.ContatoTipo;
 export namespace ContatoTipo.static {
-	export interface ContatoTipo {}
+	export interface ContatoTipo {
+      name():String
+    }
 
 	export const CLIENTE: ContatoTipo;
-}
+
+export function values(): ContatoTipo;}
 
 export class Cor {
 	getExibeLoja():Boolean
@@ -1288,14 +1321,17 @@ export namespace Deposito.static {
 }
 
 export namespace DisponibilidadeDTO.static.Motivo {
-	export interface DisponibilidadeDTO$Motivo {}
+	export interface DisponibilidadeDTO$Motivo {
+      name():String
+    }
 
 	export const DISPONIVEL: DisponibilidadeDTO$Motivo;
 	export const ENVIO: DisponibilidadeDTO$Motivo;
 	export const ENVIO_PENDENTE: DisponibilidadeDTO$Motivo;
 	export const INTEGRACAO: DisponibilidadeDTO$Motivo;
 	export const PRIMEIRA_CARGA: DisponibilidadeDTO$Motivo;
-}
+
+export function values(): Motivo;}
 
 export namespace DisponibilidadeDTO {
 export type Motivo = DisponibilidadeDTO.static.Motivo.DisponibilidadeDTO$Motivo;
@@ -2429,7 +2465,9 @@ export interface MetadadoInterface {
 
 export type MetadadoTipo = MetadadoTipo.static.MetadadoTipo;
 export namespace MetadadoTipo.static {
-	export interface MetadadoTipo {}
+	export interface MetadadoTipo {
+      name():String
+    }
 
 	export const BOOLEAN: MetadadoTipo;
 	export const DATA: MetadadoTipo;
@@ -2441,7 +2479,8 @@ export namespace MetadadoTipo.static {
 	export const LISTA_UNICA: MetadadoTipo;
 	export const STRING: MetadadoTipo;
 	export const STRING_MULTIPLA: MetadadoTipo;
-}
+
+export function values(): MetadadoTipo;}
 
 export class Moeda {
 	getCasasDecimais():BigDecimal
@@ -3640,12 +3679,15 @@ export namespace PlanejamentoProduto.static {
 
 export type Processo = Processo.static.Processo;
 export namespace Processo.static {
-	export interface Processo {}
+	export interface Processo {
+      name():String
+    }
 
 	export const CARGA: Processo;
 	export const ENVIO: Processo;
 	export const INTEGRACAO: Processo;
-}
+
+export function values(): Processo;}
 
 export class Produto {
 	getAcabamento():Acabamento
@@ -3826,13 +3868,16 @@ export namespace ReservaItem.static {
 }
 
 export namespace RetornoIntegracao.static.Situacao {
-	export interface RetornoIntegracao$Situacao {}
+	export interface RetornoIntegracao$Situacao {
+      name():String
+    }
 
 	export const ERRO: RetornoIntegracao$Situacao;
 	export const ID_NAO_BATE_CODIGO_INTEGRACAO: RetornoIntegracao$Situacao;
 	export const INVALIDO: RetornoIntegracao$Situacao;
 	export const SUCESSO: RetornoIntegracao$Situacao;
-}
+
+export function values(): Situacao;}
 
 export namespace RetornoIntegracao {
 export type Situacao = RetornoIntegracao.static.Situacao.RetornoIntegracao$Situacao;
@@ -3879,26 +3924,34 @@ export class Rotina {
 
 export type SituacaoAtendimentoCliente = SituacaoAtendimentoCliente.static.SituacaoAtendimentoCliente;
 export namespace SituacaoAtendimentoCliente.static {
-	export interface SituacaoAtendimentoCliente {}
+	export interface SituacaoAtendimentoCliente {
+      name():String
+    }
 
 	export const AGENDADO: SituacaoAtendimentoCliente;
 	export const CANCELADO: SituacaoAtendimentoCliente;
 	export const REALIZADO: SituacaoAtendimentoCliente;
-}
+
+export function values(): SituacaoAtendimentoCliente;}
 
 export type SituacaoBloqueioContato = SituacaoBloqueioContato.static.SituacaoBloqueioContato;
 export namespace SituacaoBloqueioContato.static {
-	export interface SituacaoBloqueioContato {}
+	export interface SituacaoBloqueioContato {
+      name():String
+    }
 
 	export const BOUNCE: SituacaoBloqueioContato;
 	export const DESINSCRITO: SituacaoBloqueioContato;
 	export const NENHUM: SituacaoBloqueioContato;
 	export const SPAM: SituacaoBloqueioContato;
-}
+
+export function values(): SituacaoBloqueioContato;}
 
 export type SituacaoCliente = SituacaoCliente.static.SituacaoCliente;
 export namespace SituacaoCliente.static {
-	export interface SituacaoCliente {}
+	export interface SituacaoCliente {
+      name():String
+    }
 
 	export const AGUARDANDO_RESOLUCAO_PENDENCIA: SituacaoCliente;
 	export const ATIVO: SituacaoCliente;
@@ -3906,22 +3959,28 @@ export namespace SituacaoCliente.static {
 	export const CANCELADO: SituacaoCliente;
 	export const INATIVO: SituacaoCliente;
 	export const PROSPECCAO: SituacaoCliente;
-}
+
+export function values(): SituacaoCliente;}
 
 export type SituacaoCreditoCliente = SituacaoCreditoCliente.static.SituacaoCreditoCliente;
 export namespace SituacaoCreditoCliente.static {
-	export interface SituacaoCreditoCliente {}
+	export interface SituacaoCreditoCliente {
+      name():String
+    }
 
 	export const APROVADO: SituacaoCreditoCliente;
 	export const CANCELADO: SituacaoCreditoCliente;
 	export const REJEITADO: SituacaoCreditoCliente;
 	export const REQUISITADO: SituacaoCreditoCliente;
 	export const UTILIZADO: SituacaoCreditoCliente;
-}
+
+export function values(): SituacaoCreditoCliente;}
 
 export type SituacaoEstoqueItem = SituacaoEstoqueItem.static.SituacaoEstoqueItem;
 export namespace SituacaoEstoqueItem.static {
-	export interface SituacaoEstoqueItem {}
+	export interface SituacaoEstoqueItem {
+      name():String
+    }
 
 	export const CANCELADO: SituacaoEstoqueItem;
 	export const CONSIGNADO: SituacaoEstoqueItem;
@@ -3929,16 +3988,20 @@ export namespace SituacaoEstoqueItem.static {
 	export const EM_PEDIDO: SituacaoEstoqueItem;
 	export const RESERVADO: SituacaoEstoqueItem;
 	export const VENDIDO: SituacaoEstoqueItem;
-}
+
+export function values(): SituacaoEstoqueItem;}
 
 export type SituacaoGeneric = SituacaoGeneric.static.SituacaoGeneric;
 export namespace SituacaoGeneric.static {
-	export interface SituacaoGeneric {}
+	export interface SituacaoGeneric {
+      name():String
+    }
 
 	export const ATIVO: SituacaoGeneric;
 	export const CANCELADO: SituacaoGeneric;
 	export const INATIVO: SituacaoGeneric;
-}
+
+export function values(): SituacaoGeneric;}
 
 export class SituacaoIntegracaoTela {
 	getEntidade():EntidadeIntegracao
@@ -3962,26 +4025,34 @@ export namespace SituacaoIntegracaoTela.static {
 
 export type SituacaoOferta = SituacaoOferta.static.SituacaoOferta;
 export namespace SituacaoOferta.static {
-	export interface SituacaoOferta {}
+	export interface SituacaoOferta {
+      name():String
+    }
 
 	export const AGUARDANDO_RESOLUCAO_PENDENCIA: SituacaoOferta;
 	export const ATIVA: SituacaoOferta;
 	export const CANCELADA: SituacaoOferta;
 	export const VENCIDA: SituacaoOferta;
-}
+
+export function values(): SituacaoOferta;}
 
 export type SituacaoPendenciaCliente = SituacaoPendenciaCliente.static.SituacaoPendenciaCliente;
 export namespace SituacaoPendenciaCliente.static {
-	export interface SituacaoPendenciaCliente {}
+	export interface SituacaoPendenciaCliente {
+      name():String
+    }
 
 	export const ARQUIVADA: SituacaoPendenciaCliente;
 	export const ATIVA: SituacaoPendenciaCliente;
 	export const CANCELADA: SituacaoPendenciaCliente;
-}
+
+export function values(): SituacaoPendenciaCliente;}
 
 export type SituacaoReservaItem = SituacaoReservaItem.static.SituacaoReservaItem;
 export namespace SituacaoReservaItem.static {
-	export interface SituacaoReservaItem {}
+	export interface SituacaoReservaItem {
+      name():String
+    }
 
 	export const ATIVA: SituacaoReservaItem;
 	export const CANCELADA_CLIENTE: SituacaoReservaItem;
@@ -3989,17 +4060,21 @@ export namespace SituacaoReservaItem.static {
 	export const CONCLUIDA: SituacaoReservaItem;
 	export const CONCLUIDA_INTEGRACAO: SituacaoReservaItem;
 	export const VENCIDA: SituacaoReservaItem;
-}
+
+export function values(): SituacaoReservaItem;}
 
 export type SituacaoTituloVenda = SituacaoTituloVenda.static.SituacaoTituloVenda;
 export namespace SituacaoTituloVenda.static {
-	export interface SituacaoTituloVenda {}
+	export interface SituacaoTituloVenda {
+      name():String
+    }
 
 	export const ABERTO: SituacaoTituloVenda;
 	export const ABERTO_PARCIAL: SituacaoTituloVenda;
 	export const CANCELADO: SituacaoTituloVenda;
 	export const LIQUIDADO: SituacaoTituloVenda;
-}
+
+export function values(): SituacaoTituloVenda;}
 
 export class Sugestao {
 	getCliente():Cliente
@@ -4951,11 +5026,14 @@ export class ConfiguracaoTabelaPreco {
 }
 
 export namespace ConfiguracaoTabelaPrecoItem.static.ComportamentoTabelaPrecoItemNaoEncontrado {
-	export interface ConfiguracaoTabelaPrecoItem$ComportamentoTabelaPrecoItemNaoEncontrado {}
+	export interface ConfiguracaoTabelaPrecoItem$ComportamentoTabelaPrecoItemNaoEncontrado {
+      name():String
+    }
 
 	export const IGNORAR: ConfiguracaoTabelaPrecoItem$ComportamentoTabelaPrecoItemNaoEncontrado;
 	export const INATIVAR: ConfiguracaoTabelaPrecoItem$ComportamentoTabelaPrecoItemNaoEncontrado;
-}
+
+export function values(): ComportamentoTabelaPrecoItemNaoEncontrado;}
 
 export namespace ConfiguracaoTabelaPrecoItem {
 export type ComportamentoTabelaPrecoItemNaoEncontrado = ConfiguracaoTabelaPrecoItem.static.ComportamentoTabelaPrecoItemNaoEncontrado.ConfiguracaoTabelaPrecoItem$ComportamentoTabelaPrecoItemNaoEncontrado;
@@ -4993,11 +5071,14 @@ export class ConfiguracaoTipoMaterial {
 }
 
 export namespace ConfiguracaoTituloVenda.static.ComportamentoTituloNaoEncontrado {
-	export interface ConfiguracaoTituloVenda$ComportamentoTituloNaoEncontrado {}
+	export interface ConfiguracaoTituloVenda$ComportamentoTituloNaoEncontrado {
+      name():String
+    }
 
 	export const CANCELAR: ConfiguracaoTituloVenda$ComportamentoTituloNaoEncontrado;
 	export const LIQUIDAR: ConfiguracaoTituloVenda$ComportamentoTituloNaoEncontrado;
-}
+
+export function values(): ComportamentoTituloNaoEncontrado;}
 
 export namespace ConfiguracaoTituloVenda {
 export type ComportamentoTituloNaoEncontrado = ConfiguracaoTituloVenda.static.ComportamentoTituloNaoEncontrado.ConfiguracaoTituloVenda$ComportamentoTituloNaoEncontrado;
@@ -5017,7 +5098,9 @@ export class ConfiguracaoUsuario {
 
 export type AnexoTipo = AnexoTipo.static.AnexoTipo;
 export namespace AnexoTipo.static {
-	export interface AnexoTipo {}
+	export interface AnexoTipo {
+      name():String
+    }
 
 	export const ACABAMENTO: AnexoTipo;
 	export const AJUDA: AnexoTipo;
@@ -5073,29 +5156,38 @@ export namespace AnexoTipo.static {
 	export const TIPO_MATERIAL: AnexoTipo;
 	export const TITULO_VENDA: AnexoTipo;
 	export const USUARIO_EMPRESA: AnexoTipo;
-}
+
+export function values(): AnexoTipo;}
 
 export type DominioTipo = DominioTipo.static.DominioTipo;
 export namespace DominioTipo.static {
-	export interface DominioTipo {}
+	export interface DominioTipo {
+      name():String
+    }
 
 	export const ATENDIMENTO_CLIENTE: DominioTipo;
 	export const CREDITO_CLIENTE: DominioTipo;
 	export const PENDENCIA_CLIENTE: DominioTipo;
 	export const TIPO_CLIENTE: DominioTipo;
-}
+
+export function values(): DominioTipo;}
 
 export type EnderecoTipo = EnderecoTipo.static.EnderecoTipo;
 export namespace EnderecoTipo.static {
-	export interface EnderecoTipo {}
+	export interface EnderecoTipo {
+      name():String
+    }
 
 	export const CLIENTE: EnderecoTipo;
 	export const FORNECEDOR: EnderecoTipo;
-}
+
+export function values(): EnderecoTipo;}
 
 export type EntidadeIntegracao = EntidadeIntegracao.static.EntidadeIntegracao;
 export namespace EntidadeIntegracao.static {
-	export interface EntidadeIntegracao {}
+	export interface EntidadeIntegracao {
+      name():String
+    }
 
 	export const ACABAMENTO: EntidadeIntegracao;
 	export const AGENDAMENTO_APLICACAO: EntidadeIntegracao;
@@ -5238,16 +5330,20 @@ export namespace EntidadeIntegracao.static {
 	export const USUARIO: EntidadeIntegracao;
 	export const USUARIO_EMPRESA: EntidadeIntegracao;
 	export const VENDEDOR: EntidadeIntegracao;
-}
+
+export function values(): EntidadeIntegracao;}
 
 export type ExibicaoMetadadoSidebar = ExibicaoMetadadoSidebar.static.ExibicaoMetadadoSidebar;
 export namespace ExibicaoMetadadoSidebar.static {
-	export interface ExibicaoMetadadoSidebar {}
+	export interface ExibicaoMetadadoSidebar {
+      name():String
+    }
 
 	export const NUNCA: ExibicaoMetadadoSidebar;
 	export const PREENCHIDO: ExibicaoMetadadoSidebar;
 	export const SEMPRE: ExibicaoMetadadoSidebar;
-}
+
+export function values(): ExibicaoMetadadoSidebar;}
 
 export class GenericModelComparator {
 	compare​(o1:GenericModel, o2:GenericModel):Integer
@@ -5272,16 +5368,21 @@ export namespace HistoricoNecessitaRecalculoDTO.static {
 
 export type MetadadoExibicaoEdicao = MetadadoExibicaoEdicao.static.MetadadoExibicaoEdicao;
 export namespace MetadadoExibicaoEdicao.static {
-	export interface MetadadoExibicaoEdicao {}
+	export interface MetadadoExibicaoEdicao {
+      name():String
+    }
 
 	export const EDICAO: MetadadoExibicaoEdicao;
 	export const LEITURA: MetadadoExibicaoEdicao;
 	export const NAO_EXIBE: MetadadoExibicaoEdicao;
-}
+
+export function values(): MetadadoExibicaoEdicao;}
 
 export type OrigemRegra = OrigemRegra.static.OrigemRegra;
 export namespace OrigemRegra.static {
-	export interface OrigemRegra {}
+	export interface OrigemRegra {
+      name():String
+    }
 
 	export const ACABAMENTO_GET_ALL: OrigemRegra;
 	export const ACABAMENTO_RECEBER: OrigemRegra;
@@ -5390,17 +5491,21 @@ export namespace OrigemRegra.static {
 	export const TITULO_VENDA_GET_ALL: OrigemRegra;
 	export const TITULO_VENDA_PROCESSAR_TITULO_NAO_ENCONTRADO: OrigemRegra;
 	export const TITULO_VENDA_RECEBER: OrigemRegra;
-}
+
+export function values(): OrigemRegra;}
 
 export type OrigemReservaItem = OrigemReservaItem.static.OrigemReservaItem;
 export namespace OrigemReservaItem.static {
-	export interface OrigemReservaItem {}
+	export interface OrigemReservaItem {
+      name():String
+    }
 
 	export const CONFERENCIA: OrigemReservaItem;
 	export const LOJA: OrigemReservaItem;
 	export const PLANEJAMENTO: OrigemReservaItem;
 	export const VENDEDOR: OrigemReservaItem;
-}
+
+export function values(): OrigemReservaItem;}
 
 export interface PathProcessor {
 	getExtensoes():String[]
@@ -5410,114 +5515,149 @@ export interface PathProcessor {
 
 export type SituacaoCampanha = SituacaoCampanha.static.SituacaoCampanha;
 export namespace SituacaoCampanha.static {
-	export interface SituacaoCampanha {}
+	export interface SituacaoCampanha {
+      name():String
+    }
 
 	export const AGUARDANDO_RESOLUCAO_PENDENCIA: SituacaoCampanha;
 	export const ATIVA: SituacaoCampanha;
 	export const CANCELADA: SituacaoCampanha;
 	export const VENCIDA: SituacaoCampanha;
-}
+
+export function values(): SituacaoCampanha;}
 
 export type SituacaoCancelavel = SituacaoCancelavel.static.SituacaoCancelavel;
 export namespace SituacaoCancelavel.static {
-	export interface SituacaoCancelavel {}
+	export interface SituacaoCancelavel {
+      name():String
+    }
 
 	export const ATIVO: SituacaoCancelavel;
 	export const CANCELADO: SituacaoCancelavel;
-}
+
+export function values(): SituacaoCancelavel;}
 
 export type SituacaoCustomForm = SituacaoCustomForm.static.SituacaoCustomForm;
 export namespace SituacaoCustomForm.static {
-	export interface SituacaoCustomForm {}
+	export interface SituacaoCustomForm {
+      name():String
+    }
 
 	export const AGUARDANDO_RESOLUCAO_PENDENCIA: SituacaoCustomForm;
 	export const ATIVO: SituacaoCustomForm;
 	export const CANCELADO: SituacaoCustomForm;
 	export const CONCLUIDO: SituacaoCustomForm;
 	export const REJEITADO: SituacaoCustomForm;
-}
+
+export function values(): SituacaoCustomForm;}
 
 export type SituacaoFaturamento = SituacaoFaturamento.static.SituacaoFaturamento;
 export namespace SituacaoFaturamento.static {
-	export interface SituacaoFaturamento {}
+	export interface SituacaoFaturamento {
+      name():String
+    }
 
 	export const ATIVO: SituacaoFaturamento;
 	export const CANCELADO: SituacaoFaturamento;
-}
+
+export function values(): SituacaoFaturamento;}
 
 export type SituacaoFaturamentoItem = SituacaoFaturamentoItem.static.SituacaoFaturamentoItem;
 export namespace SituacaoFaturamentoItem.static {
-	export interface SituacaoFaturamentoItem {}
+	export interface SituacaoFaturamentoItem {
+      name():String
+    }
 
 	export const ATIVO: SituacaoFaturamentoItem;
 	export const CANCELADO: SituacaoFaturamentoItem;
 	export const DEVOLVIDO: SituacaoFaturamentoItem;
-}
+
+export function values(): SituacaoFaturamentoItem;}
 
 export type SituacaoInativavel = SituacaoInativavel.static.SituacaoInativavel;
 export namespace SituacaoInativavel.static {
-	export interface SituacaoInativavel {}
+	export interface SituacaoInativavel {
+      name():String
+    }
 
 	export const ATIVO: SituacaoInativavel;
 	export const INATIVO: SituacaoInativavel;
-}
+
+export function values(): SituacaoInativavel;}
 
 export type SituacaoInspecao = SituacaoInspecao.static.SituacaoInspecao;
 export namespace SituacaoInspecao.static {
-	export interface SituacaoInspecao {}
+	export interface SituacaoInspecao {
+      name():String
+    }
 
 	export const AGUARDANDO_RESOLUCAO_PENDENCIA: SituacaoInspecao;
 	export const ATIVA: SituacaoInspecao;
 	export const CANCELADA: SituacaoInspecao;
 	export const FECHADA: SituacaoInspecao;
 	export const RECEBIDA: SituacaoInspecao;
-}
+
+export function values(): SituacaoInspecao;}
 
 export type SituacaoIntegracao = SituacaoIntegracao.static.SituacaoIntegracao;
 export namespace SituacaoIntegracao.static {
-	export interface SituacaoIntegracao {}
+	export interface SituacaoIntegracao {
+      name():String
+    }
 
 	export const ERRO: SituacaoIntegracao;
 	export const OK: SituacaoIntegracao;
 	export const PENDENTE_ENVIO: SituacaoIntegracao;
 	export const PENDENTE_ENVIO_MOBGRAN: SituacaoIntegracao;
 	export const PENDENTE_RETORNO: SituacaoIntegracao;
-}
+
+export function values(): SituacaoIntegracao;}
 
 export type SituacaoNegociacao = SituacaoNegociacao.static.SituacaoNegociacao;
 export namespace SituacaoNegociacao.static {
-	export interface SituacaoNegociacao {}
+	export interface SituacaoNegociacao {
+      name():String
+    }
 
 	export const AGUARDANDO_RESOLUCAO_PENDENCIA: SituacaoNegociacao;
 	export const ATIVA: SituacaoNegociacao;
 	export const CANCELADA: SituacaoNegociacao;
 	export const PEDIDO: SituacaoNegociacao;
 	export const VENCIDA: SituacaoNegociacao;
-}
+
+export function values(): SituacaoNegociacao;}
 
 export type SituacaoOportunidade = SituacaoOportunidade.static.SituacaoOportunidade;
 export namespace SituacaoOportunidade.static {
-	export interface SituacaoOportunidade {}
+	export interface SituacaoOportunidade {
+      name():String
+    }
 
 	export const ATIVA: SituacaoOportunidade;
 	export const CANCELADA: SituacaoOportunidade;
 	export const CONCLUIDA: SituacaoOportunidade;
 	export const VENCIDA: SituacaoOportunidade;
-}
+
+export function values(): SituacaoOportunidade;}
 
 export type SituacaoOrdemCompra = SituacaoOrdemCompra.static.SituacaoOrdemCompra;
 export namespace SituacaoOrdemCompra.static {
-	export interface SituacaoOrdemCompra {}
+	export interface SituacaoOrdemCompra {
+      name():String
+    }
 
 	export const ATIVA: SituacaoOrdemCompra;
 	export const CANCELADA: SituacaoOrdemCompra;
 	export const FECHADA: SituacaoOrdemCompra;
 	export const RECEBIDA: SituacaoOrdemCompra;
-}
+
+export function values(): SituacaoOrdemCompra;}
 
 export type SituacaoPedido = SituacaoPedido.static.SituacaoPedido;
 export namespace SituacaoPedido.static {
-	export interface SituacaoPedido {}
+	export interface SituacaoPedido {
+      name():String
+    }
 
 	export const AGUARDANDO_RESOLUCAO_PENDENCIA: SituacaoPedido;
 	export const ATIVO: SituacaoPedido;
@@ -5528,112 +5668,149 @@ export namespace SituacaoPedido.static {
 	export const FATURADO_SIMPLES: SituacaoPedido;
 	export const FECHADO: SituacaoPedido;
 	export const VENCIDO: SituacaoPedido;
-}
+
+export function values(): SituacaoPedido;}
 
 export type SituacaoPendencia = SituacaoPendencia.static.SituacaoPendencia;
 export namespace SituacaoPendencia.static {
-	export interface SituacaoPendencia {}
+	export interface SituacaoPendencia {
+      name():String
+    }
 
 	export const APROVADA: SituacaoPendencia;
 	export const PENDENTE: SituacaoPendencia;
 	export const REJEITADA: SituacaoPendencia;
-}
+
+export function values(): SituacaoPendencia;}
 
 export type SituacaoPlanejamento = SituacaoPlanejamento.static.SituacaoPlanejamento;
 export namespace SituacaoPlanejamento.static {
-	export interface SituacaoPlanejamento {}
+	export interface SituacaoPlanejamento {
+      name():String
+    }
 
 	export const AGUARDANDO_RESOLUCAO_PENDENCIA: SituacaoPlanejamento;
 	export const ATIVO: SituacaoPlanejamento;
 	export const CANCELADO: SituacaoPlanejamento;
 	export const CONCLUIDO: SituacaoPlanejamento;
 	export const VENCIDO: SituacaoPlanejamento;
-}
+
+export function values(): SituacaoPlanejamento;}
 
 export type SituacaoTarefa = SituacaoTarefa.static.SituacaoTarefa;
 export namespace SituacaoTarefa.static {
-	export interface SituacaoTarefa {}
+	export interface SituacaoTarefa {
+      name():String
+    }
 
 	export const ATIVA: SituacaoTarefa;
 	export const CANCELADA: SituacaoTarefa;
 	export const CONCLUIDA: SituacaoTarefa;
-}
+
+export function values(): SituacaoTarefa;}
 
 export type TipoCategoriaHomeLoja = TipoCategoriaHomeLoja.static.TipoCategoriaHomeLoja;
 export namespace TipoCategoriaHomeLoja.static {
-	export interface TipoCategoriaHomeLoja {}
+	export interface TipoCategoriaHomeLoja {
+      name():String
+    }
 
 	export const CATEGORIA: TipoCategoriaHomeLoja;
 	export const ESTOQUE_ITEM: TipoCategoriaHomeLoja;
-}
+
+export function values(): TipoCategoriaHomeLoja;}
 
 export type TipoEstoqueItemExibicaoVisual = TipoEstoqueItemExibicaoVisual.static.TipoEstoqueItemExibicaoVisual;
 export namespace TipoEstoqueItemExibicaoVisual.static {
-	export interface TipoEstoqueItemExibicaoVisual {}
+	export interface TipoEstoqueItemExibicaoVisual {
+      name():String
+    }
 
 	export const CATEGORIA: TipoEstoqueItemExibicaoVisual;
 	export const MATERIAL: TipoEstoqueItemExibicaoVisual;
-}
+
+export function values(): TipoEstoqueItemExibicaoVisual;}
 
 export type TipoEstoqueItemTipoCalculoQuantidade = TipoEstoqueItemTipoCalculoQuantidade.static.TipoEstoqueItemTipoCalculoQuantidade;
 export namespace TipoEstoqueItemTipoCalculoQuantidade.static {
-	export interface TipoEstoqueItemTipoCalculoQuantidade {}
+	export interface TipoEstoqueItemTipoCalculoQuantidade {
+      name():String
+    }
 
 	export const METRAGEM: TipoEstoqueItemTipoCalculoQuantidade;
 	export const QUANTIDADE: TipoEstoqueItemTipoCalculoQuantidade;
-}
+
+export function values(): TipoEstoqueItemTipoCalculoQuantidade;}
 
 export type TipoInspecao = TipoInspecao.static.TipoInspecao;
 export namespace TipoInspecao.static {
-	export interface TipoInspecao {}
+	export interface TipoInspecao {
+      name():String
+    }
 
 	export const COMPRA: TipoInspecao;
 	export const VENDA: TipoInspecao;
-}
+
+export function values(): TipoInspecao;}
 
 export type TipoNotificacao = TipoNotificacao.static.TipoNotificacao;
 export namespace TipoNotificacao.static {
-	export interface TipoNotificacao {}
+	export interface TipoNotificacao {
+      name():String
+    }
 
 	export const AMBOS: TipoNotificacao;
 	export const EMAIL: TipoNotificacao;
 	export const NENHUM: TipoNotificacao;
 	export const PUSH: TipoNotificacao;
-}
+
+export function values(): TipoNotificacao;}
 
 export type TipoPlanejamentoEstoqueItem = TipoPlanejamentoEstoqueItem.static.TipoPlanejamentoEstoqueItem;
 export namespace TipoPlanejamentoEstoqueItem.static {
-	export interface TipoPlanejamentoEstoqueItem {}
+	export interface TipoPlanejamentoEstoqueItem {
+      name():String
+    }
 
 	export const ORIGEM: TipoPlanejamentoEstoqueItem;
-}
+
+export function values(): TipoPlanejamentoEstoqueItem;}
 
 export type TipoProdutoTipoCalculoValor = TipoProdutoTipoCalculoValor.static.TipoProdutoTipoCalculoValor;
 export namespace TipoProdutoTipoCalculoValor.static {
-	export interface TipoProdutoTipoCalculoValor {}
+	export interface TipoProdutoTipoCalculoValor {
+      name():String
+    }
 
 	export const METRAGEM_QUANTIDADE_VALOR: TipoProdutoTipoCalculoValor;
 	export const METRAGEM_VALOR: TipoProdutoTipoCalculoValor;
 	export const QUANTIDADE_VALOR: TipoProdutoTipoCalculoValor;
-}
+
+export function values(): TipoProdutoTipoCalculoValor;}
 
 export type TipoProdutoTipoMetragem = TipoProdutoTipoMetragem.static.TipoProdutoTipoMetragem;
 export namespace TipoProdutoTipoMetragem.static {
-	export interface TipoProdutoTipoMetragem {}
+	export interface TipoProdutoTipoMetragem {
+      name():String
+    }
 
 	export const AREA: TipoProdutoTipoMetragem;
 	export const DIMENSAO: TipoProdutoTipoMetragem;
 	export const NENHUM: TipoProdutoTipoMetragem;
 	export const VOLUME: TipoProdutoTipoMetragem;
-}
+
+export function values(): TipoProdutoTipoMetragem;}
 
 export type TipoTabelaPrecoItem = TipoTabelaPrecoItem.static.TipoTabelaPrecoItem;
 export namespace TipoTabelaPrecoItem.static {
-	export interface TipoTabelaPrecoItem {}
+	export interface TipoTabelaPrecoItem {
+      name():String
+    }
 
 	export const ESTOQUE_ITEM: TipoTabelaPrecoItem;
 	export const PADRAO: TipoTabelaPrecoItem;
 	export const PRODUTO: TipoTabelaPrecoItem;
-}
+
+export function values(): TipoTabelaPrecoItem;}
 
 }
