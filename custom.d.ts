@@ -1995,6 +1995,7 @@ export class GenericModelEmpresa extends GenericModel {
 	getEmpresa():Empresa
 	getErro():Boolean
 	getErroIntegracao():Boolean
+	getExtra():HashMap<String,​any>
 	getExtraIntegrador():String
 	getExtraTela():String
 	getIdAnexoPadrao():String
@@ -2010,6 +2011,7 @@ export class GenericModelEmpresa extends GenericModel {
 	setEmpresa​(empresa:Empresa):void
 	setErro​(erro:Boolean):void
 	setErroIntegracao​(erroIntegracao:Boolean):void
+	setExtra​(extra:HashMap<String,​java.lang.any>):void
 	setExtraIntegrador​(extraIntegrador:String):void
 	setExtraTela​(extraTela:String):void
 	setIdAnexoPadrao​(idAnexoPadrao:String):void
